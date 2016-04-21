@@ -1,16 +1,15 @@
+#Integration testing
+
+## With RSpec and Capybara
+
 Important links
 RSPEC, Capybara, Wouters repository
-
-https://github.com/jnicklas/capybara#selenium
-Fork teh project
->
-TODO: check what miriam told them
 
 Integration testing is all about testing our business rules and giant guineapigs.
 
 So let us start with the rules and leave the giant guineapigs for now.
 
-We have created a simple todo app. Even simple apps need some rules/behaviours.
+We have previously created a simple todo app. Even simple apps need some rules/behaviours.
 If we look at the app and work with it we can distingiush the following rules
 
 1. We can add a new task by entering its description in the textfield and pressing the enter key
