@@ -12,18 +12,18 @@ So let us start with the rules and leave the giant guineapigs for now.
 We have previously created a simple todo app. Even simple apps need some rules/behaviours.
 If we look at the app and work with it we can distingiush the following rules
 
-1. We can add a new task by entering its description in the textfield and pressing the enter key
-2. A new task is displayed in the list of tasks
-3. A counter at the bottom keeps track of the amount of open tasks
-4. We can complete a task by clicking its description
-5. We can complete a task by clicking the checkbox infront of it
-6. A completed task has both a crossed trough description and a checked checkbox, regardless of the way it as been completed
-7. There is a counter of completed tasks in the bottom. This counter is updated when a task is completed
-8. The counter for open tasks is also updated when a task is closed.
-9. We can clean up our task list by clicking the clear button
-10. The clear button removes all tasks from our list
-11. The counter for completed tasks is updated accordingly
-12. No finished tasks should be remaining in the list
+> 1. We can add a new task by entering its description in the textfield and pressing the enter key
+> 2. A new task is displayed in the list of tasks
+> 3. A counter at the bottom keeps track of the amount of open tasks
+> 4. We can complete a task by clicking its description
+> 5. We can complete a task by clicking the checkbox infront of it
+> 6. A completed task has both a crossed trough description and a checked checkbox, regardless of the way it as been completed
+> 7. There is a counter of completed tasks in the bottom. This counter is updated when a task is completed
+> 8. The counter for open tasks is also updated when a task is closed.
+> 9. We can clean up our task list by clicking the clear button
+> 10. The clear button removes all tasks from our list
+> 11. The counter for completed tasks is updated accordingly
+> 12. No finished tasks should be remaining in the list
 
 Testing these business rules is called integration testing. Also known as feature testing or end to end testing
 
@@ -47,7 +47,7 @@ They are also very good at testing software.
 
 When a capybara tests your software you get a warm fuzzy feeling inside
 
-Also you need a [firefox](Link to the firefox website).
+Also you need a [firefox](https://www.mozilla.org/en-US/firefox/new/).
 
 Install gems
 
@@ -64,7 +64,7 @@ $ rails g rspec:install
 rails s
 ```
 
-Navigate your browser to: http://localhost:3000/todos
+Navigate your browser to [localhost](http://localhost:3000/todos)
 
 Now we have set up for regular rspec but not yet for capybara.
 To support capybara we need to add the gem to our rspec test helpers and the rails helper
@@ -75,9 +75,10 @@ require 'capybara/rails' => rails helper
 
 Now let us create some tests for each of the 12 behaviours listed above.
 
-Our tests will go into the feature folder
+Our tests will go into the `spec/feature` folder
 
 Lets start with a test to test 1 & 2
+
 1. We can add a new task by entering its description in the textfield and pressing the enter key
 2. A new task is displayed in the list of tasks
 
@@ -94,9 +95,9 @@ scenario 'We can add a new task by entering its description in the textfield and
   expect(page).to have_content('NEW TASK')
 end
 ```
-A scenario is a `TODO`
+A scenario is a block
 
 We can extend these test by adding scenario's
 
-Lets add a scenario for
+Lets add a scenario for checking the count change (behaviour 3)
 
