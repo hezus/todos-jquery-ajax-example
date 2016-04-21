@@ -12,10 +12,10 @@ feature 'Make a new task', :js => true do
     #now test #2 A new task is displayed in the list of tasks
     expect(page).to have_content('NEW TASK')
   end
-  scenario 'counts chnage' do
-    make_new_task 'i can has cheeseburger?'
-    expect(page).to have_content('i can has cheeseburger?')
-    expect('#todo-count').to have_content('1')
+  scenario 'counts change' do
+    make_new_task 'i can has cheeseburger'
+    expect(page).to have_content('i can has cheeseburger')
+    expect( page.find(:css, 'span#todo-count').text ).to eq "1"
     #click the content
     #it should get the state done
   end

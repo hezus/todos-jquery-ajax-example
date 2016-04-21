@@ -101,3 +101,13 @@ We can extend these test by adding scenario's
 
 Lets add a scenario for checking the count change (behaviour 3)
 
+```ruby
+scenario 'todo count change' do
+  visit todos_path
+  fill_in 'new-todo', with: 'i can has cheeseburger'
+  page.execute_script("$('form').submit()")
+  expect(page).to have_content('i can has cheeseburger')
+  expect( page.find(:css, 'span#todo-count').text ).to eq "1"
+end
+```
+
