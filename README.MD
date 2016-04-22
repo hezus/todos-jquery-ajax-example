@@ -110,4 +110,12 @@ scenario 'todo count change' do
   expect( page.find(:css, 'span#todo-count').text ).to eq "1"
 end
 ```
+As you can see we use a new method, the `page.find` method which can accept various types of arguments. 
+In this case we use a simple css selector to get the value of the todo-count element.
+
+Lets make some feature tests for completing a task.
+A important aspect of testing, which i'm sure Miriam has told you, is that all tests should be able to run independent and the order is changed each time.
+
+So we create a new task again, and then complete it. 
+
 
