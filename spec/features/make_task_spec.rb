@@ -4,7 +4,7 @@ feature 'Make a new task', :js => true do
   before(:each) do
     visit todos_path
   end
-  scenario 'We can add a new task by entering its description in the textfield and pressing the enter key' do
+  scenario 'We can add a new task' do
     make_new_task 'All your base are belong to us'
     expect(page).to have_content('All your base are belong to us')
   end
@@ -29,6 +29,7 @@ feature 'Make a new task', :js => true do
     make_new_task 'i can has cheeseburger?'
     make_new_task 'candy mountain'
     make_new_task 'over 9000'
+    expect(page).to have_selector('li.todo', count: 3)
     expect( page.find(:css, 'span#todo-count').text ).to eq "3"
     find("label[for=todo-1]").click
     find("label[for=todo-2]").click
@@ -40,6 +41,7 @@ feature 'Make a new task', :js => true do
     make_new_task 'i can has cheeseburger?'
     make_new_task 'candy mountain'
     make_new_task 'over 9000'
+    expect(page).to have_selector('li.todo', count: 3)
     find("label[for=todo-1]").click
     find("label[for=todo-2]").click
     find("#clean-up").click
